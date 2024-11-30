@@ -11,7 +11,9 @@ Steps:
 
 Create IAM administrator user. Copy the access key and secret key. Don't push to any GitHub or internet.
 Configure user in your laptop using
+
 aws configure
+
 Add the terraform path to system variables.
 alt text
 
@@ -46,13 +48,21 @@ Code reuse. We can develop our own modules our use open source modules to reuse 
 
 **Terraform Commands**
 First command is to initialize the terraform, at this stage terraform downloads the provider into .terraform folder.
+
 terraform init
+
 Next we need to run plan command, at this stage terraform compares the infra between declared and existing. This is only plan terraform will not create
+
 terraform plan
+
 Next we need to apply the infra, at this stage terraform create the infra with approval.
+
 terraform apply
+
 **Clarification**
-While creating terraform resource, left side things are called as arguments, we have to use the same name as per terraform aws documentation. For example
+While creating terraform resource, left side things are called as arguments, we have to use the same name as per terraform aws documentation.
+
+For example
 
 resource "aws_instance" "terraform" {
 
@@ -63,7 +73,9 @@ Here argument ami is from the documentation, right side is the value. You can di
 You may also keep the value in variable. Variable name is completely your wish.
 
 It can be same name like ami
+
 It can be different name like ami_id
+
 resource "aws_instance" "terraform" {
 
     ami = var.ami_id
